@@ -1,6 +1,6 @@
 class Food < ApplicationRecord
   validates :name, presence: true, uniqueness: true
-  validate :name_must_be_two_words_or_more
+  # validate :name_must_be_two_words_or_more
   validates :description, presence: true
   validates :price, numericality: { only_float: true, message: 'must be numeric' }
   validates :price, numericality: {
