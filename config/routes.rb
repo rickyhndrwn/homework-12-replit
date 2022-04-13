@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   root 'foods#index'
   
   get 'food/index' => 'food#index'
-  get 'food/:id' => "food#show"
+  get 'food/:id' => 'food#show'
+  get 'food/new' => 'food#new'
 end
