@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'food/index' => 'food#index'
   get 'food/:id' => 'food#show'
   get 'food/new' => 'food#new'
+  get 'food/:id/edit' => 'food#edit'
 end
