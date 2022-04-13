@@ -53,6 +53,18 @@ RSpec.describe Food, type: :model do
     expect(food2.errors[:name]).to include("has already been taken")
   end
 
+  it 'is invalid if less than two words for name' do
+    food = Food.new(
+      name: 'Rujak',
+      description: 'ini rujak',
+      price: 15000.0
+    )
+
+    food.valid?
+
+    expect(food.errors[:name]).to include("can't be less than two words")
+  end
+
   it 'is invalid with a non-numerical price' do
     food = Food.create(
       name: 'Nasi Uduk',
