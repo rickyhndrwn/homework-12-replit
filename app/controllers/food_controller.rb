@@ -27,8 +27,8 @@ class FoodController < ApplicationController
 
   def update
     @food = Food.find_by(id: params[:id])
-    @food.name = params[:name]
-    if @food.save
+    success = @food.update(params.require(:food).permit(:name, :description, :price))
+    if success
       redirect_to @food
     else
       render("food/edit")
