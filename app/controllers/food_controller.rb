@@ -25,6 +25,16 @@ class FoodController < ApplicationController
     @food = Food.find_by(id: params[:id])
   end
 
+  def update
+    @food = Food.find_by(id: params[:id])
+    @food.name = params[:name]
+    if @food.save
+      redirect_to @food
+    else
+      render("food/edit")
+    end
+  end
+
   def destroy
     @food = Food.find_by(id: params[:id])
     @food.destroy
