@@ -25,4 +25,10 @@ class FoodController < ApplicationController
   def edit
     @food = Food.find_by(id: params[:id])
   end
+
+  def destroy
+    @food = Food.find_by(id: params[:id])
+    @food.destroy
+    redirect_to food_url
+  end
 end

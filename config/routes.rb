@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'foods#index'
   
-  get 'food/index' => 'food#index'
-  get 'food/:id' => 'food#show'
-  get 'food/new' => 'food#new'
-  post 'food.create' => 'food#create'
-  post "posts/create" => "posts#create"
-  get 'food/:id/edit' => 'food#edit'
+  # get 'food/index' => 'food#index'
+  # get 'food/:id' => 'food#show'
+  # get 'food/new' => 'food#new'
+  # post 'food.create' => 'food#create'
+  # get 'food/:id/edit' => 'food#edit'
+  # post 'food/:id/destroy' => 'food#destroy'
 end
