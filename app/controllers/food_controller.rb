@@ -15,8 +15,7 @@ class FoodController < ApplicationController
     @food = Food.new(params.require(:food).permit(:name, :description, :price))
     
     if @food.save
-      redirect_to food_index_path(@food)
-      # redirect_to('/food/show')
+      redirect_to food_url(@food)
     else
       render('food/new')
     end

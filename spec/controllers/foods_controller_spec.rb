@@ -78,10 +78,10 @@ RSpec.describe FoodController do
         }.to change(Food, :count).by(1)
       end
 
-      # it "redirects to foods#show" do
-      #   post :create, params: { food: attributes_for(:food) }
-      #   expect(response).to redirect_to(food_path(assigns[:food]))
-      # end
+      it "redirects to foods#show" do
+        post :create, params: { food: attributes_for(:food) }
+        expect(response).to redirect_to(food_path(assigns[:food]))
+      end
     end
 
     context "with invalid attributes" do
